@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">UpKeep</string>
+    <string name="up_keep_logo">UpKeep Logo</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="all">All</string>
+
+    <string name="vacuum">Vacuum</string>
+    <string name="vacuum_desc">Vacuuming helps keep allergens…</string>
+    <string name="mop">Mop</string>
+    <string name="mop_desc">Mopping keeps floors shiny.</string>
+    <string name="bed_sheets">Bed Sheets</string>
+    <string name="bed_sheets_desc">Cleaning bed sheets keeps…</string>
+    <string name="washing_counters">Washing Counters</string>
+    <string name="washing_counters_desc">Washing counters daily reduces…</string>
+    <string name="oven">Oven</string>
+    <string name="oven_desc">Deep cleaning the oven…</string>
+    <string name="dishes">Dishes</string>
+    <string name="dishes_desc">Cleaning dishes daily…</string>
+    <string name="microwave">Microwave</string>
+    <string name="microwave_desc">Cleaning the microwave…</string>
+    <string name="laundry">Laundry</string>
+    <string name="laundry_desc">Keeping up on laundry…</string>
+    <string name="sweep">Sweep Kitchen</string>
+    <string name="sweep_desc">Sweeping the kitchen floor…</string>
+    <string name="mirrors">Wipe Mirrors</string>
+    <string name="mirrors_desc">Wiping mirrors…</string>
+    <string name="car_lights">Check car lights</string>
+    <string name="car_lights_desc">Checking the lights on your car…</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="no_account">No Account? </string>
+</resources>
