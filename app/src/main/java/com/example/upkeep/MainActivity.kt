@@ -21,6 +21,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DoneAll
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -53,6 +54,7 @@ import com.example.upkeep.viewmodel.SignUpViewModel
 import com.example.upkeep.data.TaskHistoryDatabase
 import com.example.upkeep.ui.theme.ProfileScreen
 import com.example.upkeep.ui.theme.TaskHistoryScreen
+import com.example.upkeep.ui.theme.TimerScreen
 import java.util.Calendar
 import java.util.concurrent.TimeUnit
 
@@ -112,7 +114,7 @@ fun UpKeepApp(viewModel: LoginScreenViewModel) {
         topBar = { UpKeepTopBar() },
         bottomBar = {
 
-            if (currentRoute in listOf("taskList", "completedTasks", "profile")) {
+            if (currentRoute in listOf("taskList", "timer", "completedTasks", "profile")) {
                 UpKeepBottomNavigationBar(navController)
             }
         }
@@ -155,6 +157,10 @@ fun UpKeepApp(viewModel: LoginScreenViewModel) {
                 )
             }
 
+            composable("timer") {
+                TimerScreen(navController = navController)
+            }
+
 
         }
     }
@@ -162,6 +168,7 @@ fun UpKeepApp(viewModel: LoginScreenViewModel) {
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
     object TaskList : Screen("taskList", "Tasks", Icons.Filled.Menu)
+    object Timer : Screen("timer", "Timer", Icons.Filled.Timer)
     object CompletedTasks : Screen("completedTasks", "Completed Tasks", Icons.Filled.DoneAll)
     object Profile : Screen("profile", "Profile", Icons.Filled.Person)
 }
@@ -193,6 +200,7 @@ fun UpKeepTopBar(modifier: Modifier = Modifier) {
 fun UpKeepBottomNavigationBar(navController: NavController) {
     val items = listOf(
         Screen.TaskList,
+        Screen.Timer,
         Screen.CompletedTasks,
         Screen.Profile
     )
