@@ -35,6 +35,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
@@ -66,7 +67,7 @@ class MainActivity : ComponentActivity() {
 
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             "dailyNotification",
-            ExistingPeriodicWorkPolicy.REPLACE,
+            ExistingPeriodicWorkPolicy.UPDATE,
             workRequest
         )
     }
@@ -211,7 +212,7 @@ fun UpKeepBottomNavigationBar(navController: NavController) {
         items.forEach { screen ->
             NavigationBarItem(
                 icon = { Icon(screen.icon, contentDescription = screen.title) },
-                label = { Text(screen.title) },
+                label = { Text(screen.title, textAlign = TextAlign.Center) },
                 selected = currentRoute == screen.route,
                 onClick = { navController.navigate(screen.route) }
             )

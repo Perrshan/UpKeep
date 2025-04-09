@@ -71,11 +71,19 @@ fun TaskHistoryScreen(taskHistories: List<TaskHistory>) {
                     .fillMaxWidth()
             ) {
                 items(taskHistories) { task ->
-                    Card(modifier = Modifier.padding(12.dp)) {
-                        Text(
-                            text = "${task.taskName} was completed on ${convertUtcToLocal(task.timestamp)}",
-                            modifier = Modifier.padding(16.dp)
-                        )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(12.dp),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Card {
+                            Text(
+                                text = "${task.taskName} was completed on ${convertUtcToLocal(task.timestamp)}",
+                                modifier = Modifier.padding(16.dp),
+                                textAlign = TextAlign.Center // Add this line
+                            )
+                        }
                     }
                 }
             }

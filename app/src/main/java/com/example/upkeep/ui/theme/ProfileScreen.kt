@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -58,16 +59,17 @@ fun ProfileScreen(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         if (firstName != null && !isEditingFirstName) {
-            Column {
+            Column (Modifier.fillMaxWidth()) {
                 Text(
                     text = firstName,
-                    fontSize = 48.sp
+                    fontSize = 48.sp,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = "Edit",
+                    text = "Edit First Name",
                     color = Color.Blue,
-                    fontSize = 20.sp,
+                    fontSize = 16.sp,
                     modifier = Modifier
                         .padding(top = 4.dp, start = 8.dp)
                         .clickable { isEditingFirstName = true },
@@ -92,17 +94,18 @@ fun ProfileScreen(
             }
         }
 
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(12.dp))
 
         if (lastName != null && !isEditingLastName) {
-            Column {
+            Column (Modifier.fillMaxWidth()) {
                 Text(text = lastName,
-                    fontSize = 48.sp)
+                    fontSize = 48.sp,
+                    modifier = Modifier.align(Alignment.CenterHorizontally))
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = "Edit",
+                    text = "Edit Last Name",
                     color = Color.Blue,
-                    fontSize = 20.sp,
+                    fontSize = 16.sp,
                     modifier = Modifier
                         .padding(top = 4.dp, start = 8.dp)
                         .clickable { isEditingLastName = true },
@@ -127,17 +130,18 @@ fun ProfileScreen(
             }
         }
 
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(12.dp))
 
         if (favoriteColor != null && !isEditingFavoriteColor) {
-            Column {
+            Column (Modifier.fillMaxWidth()) {
                 Text(text = favoriteColor,
-                    fontSize = 48.sp)
+                    fontSize = 48.sp,
+                    modifier = Modifier.align(Alignment.CenterHorizontally))
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = "Edit",
+                    text = "Edit Favorite Color",
                     color = Color.Blue,
-                    fontSize = 20.sp,
+                    fontSize = 16.sp,
                     modifier = Modifier
                         .padding(top = 4.dp, start = 8.dp)
                         .clickable { isEditingFavoriteColor = true },

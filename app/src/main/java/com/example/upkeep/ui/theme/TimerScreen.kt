@@ -48,6 +48,14 @@ fun TimerScreen(navController: NavController) {
             style = MaterialTheme.typography.displayLarge
         )
         Spacer(modifier = Modifier.height(16.dp))
+        if (isRunning) {
+            Text(
+                text = "Go Clean!",
+                style = MaterialTheme.typography.displayMedium
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
         Button(onClick = { isRunning = !isRunning }) {
             Text(if (isRunning) "Pause" else "Start")
         }
